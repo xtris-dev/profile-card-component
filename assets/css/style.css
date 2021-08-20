@@ -1,0 +1,139 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+/* CSS VARIABLES */
+:root {
+	/* Primary colors */
+	--dark-cyan: hsl(185, 75%, 39%);
+	--dark-desaturated-blue: hsl(229, 23%, 23%);
+	--grayish-blue: hsl(227, 10%, 46%);
+
+	--dark-grey: hsl(0, 0%, 59%);
+}
+
+/* BASIC SETTINGS */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.8rem;
+	font-family: "Kumbh Sans", sans-serif;
+	background-color: var(--dark-cyan);
+}
+
+/* ==================== MAIN CSS =============== */
+#bubble-top {
+	position: fixed;
+	top: -52rem;
+	left: -28rem;
+	z-index: -1;
+}
+#bubble-bottom {
+	position: fixed;
+	right: -25rem;
+	bottom: -58rem;
+	z-index: -1;
+}
+
+#card-component {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	border-radius: 1.5rem;
+	position: relative;
+	width: 450px;
+}
+.card img:nth-child(1) {
+	border-top-left-radius: 1.5rem;
+	border-top-right-radius: 1.5rem;
+}
+.card img:nth-child(2) {
+	position: absolute;
+	left: 50%;
+	top: 38%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	border: 6px solid #fff;
+}
+
+.name {
+	display: flex;
+	justify-content: center;
+	margin-top: 8rem;
+}
+.name h1 {
+	font-size: 2.3rem;
+	color: var(--dark-desaturated-blue);
+}
+.name h2 {
+	font-weight: 400;
+	font-size: 2.3rem;
+	margin-left: 1rem;
+	color: var(--grayish-blue);
+}
+
+.card-elements p {
+	text-align: center;
+	margin-top: 1rem;
+	margin-bottom: 3.5rem;
+	color: var(--dark-desaturated-blue);
+}
+.card-elements hr {
+	border-top: 1px solid var(--dark-grey);
+	opacity: 0.15;
+}
+
+.stats-info {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 3rem;
+}
+
+.stat {
+	text-align: center;
+}
+.stat h3 {
+	color: var(--dark-desaturated-blue);
+}
+.stat p {
+	margin-top: 0.5rem;
+	font-size: 1.4rem;
+	letter-spacing: 1.5px;
+	color: var(--dark-grey);
+}
+
+/* ============= MEDIA QUERIES / RESPONSIVE MOBILE ============= */
+@media only screen and (max-width: 460px) {
+	.card {
+		width: 85%;
+	}
+	.card img:nth-child(2) {
+		position: absolute;
+		left: 50%;
+		top: 30%;
+	}
+	#bubble-top {
+		position: fixed;
+		top: -49rem;
+		left: -75rem;
+		z-index: -1;
+	}
+	#bubble-bottom {
+		position: fixed;
+		right: -75rem;
+		bottom: -50rem;
+		z-index: -1;
+	}
+}
